@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的叠放次序</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .xiongda {
+            z-index: 1;
+            background-color: pink;
+        }
+        
+        .xionger {
+            z-index: 3;
+            background-color: green;
+            left: 50px;
+            top: 50px;
+        }
+        
+        .qiangge {
+            z-index: 2;
+            background-color: purple;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box xiongda">熊大</div>
+    <div class="box xionger">熊二</div>
+    <div class="box qiangge">光头强</div>
+</body>
+
+</html>

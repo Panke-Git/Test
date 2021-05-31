@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内快元素的巧妙运用</title>
+    <style>
+        .box a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 36px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        
+        .box {
+            text-align: center;
+        }
+        
+        .box .next {
+            width: 85px;
+        }
+        
+        .box .prev {
+            width: 85px;
+        }
+        
+        .box a:hover {
+            background-color: transparent;
+        }
+        
+        .box a:focus {
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
+        
+        .box input {
+            height: 36px;
+            width: 45px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        
+        .box button {
+            width: 55px;
+            height: 36px;
+            border: 1px solid #ccc;
+            background-color: #f7f7f7;
+            font-weight: 700;
+        }
+        
+        .box button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="" class="prev">&lt;&lt;上一页</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#" class="next">下一页&gt;&gt;</a> 到第
+        <input type="text"> 页
+        <button>确定</button>
+    </div>
+</body>
+
+</html>

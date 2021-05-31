@@ -1,0 +1,200 @@
+/* * {
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+} */
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?ceyp0u');
+    src: url('../fonts/icomoon.eot?ceyp0u#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?ceyp0u') format('truetype'), url('../fonts/icomoon.woff?ceyp0u') format('woff'), url('../fonts/icomoon.svg?ceyp0u#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.header {
+    height: 84px;
+    border-bottom: 2px solid rgb(41, 38, 38);
+}
+
+.header .logo {
+    float: left;
+    width: 171px;
+    height: 61px;
+    margin-top: 10px;
+    background: url(../images/logo.png);
+}
+
+.registerarea {
+    /* overflow: hidden; */
+    height: 520px;
+    margin-top: 15px;
+    border: 1px solid #747474;
+}
+
+.registerarea .r-header {
+    /* overflow: hidden; */
+    position: relative;
+    height: 42px;
+    background-color: #c3c3c3;
+    border-bottom: 1px solid #747474;
+}
+
+.registerarea .r-header span:first-of-type {
+    /* float: left; */
+    display: block;
+    width: 100px;
+    float: left;
+    margin-left: 15px;
+    color: #747474;
+    font-size: 14px;
+    line-height: 42px;
+}
+
+.registerarea .r-header span:last-of-type {
+    position: absolute;
+    right: 15px;
+    float: left;
+    display: block;
+    width: 100px;
+    line-height: 42px;
+}
+
+.registerarea .r-header span:last-of-type a {
+    color: #c81523;
+}
+
+.reg_form {
+    width: 600px;
+    /* background-color: pink; */
+    margin: 50px auto 0;
+}
+
+.reg_form ul li {
+    margin-bottom: 20px;
+}
+
+.reg_form ul li label {
+    display: inline-block;
+    width: 88px;
+    text-align: right;
+}
+
+.reg_form ul li .inp {
+    width: 242px;
+    height: 37px;
+    border: 1px solid #ccc;
+}
+
+.error {
+    color: #c81523;
+    line-height: 37px;
+    font-size: 14px;
+}
+
+.error::before {
+    content: "\e97a";
+    font-family: "icomoon";
+    color: #c81523;
+    font-size: 14px;
+}
+
+.success {
+    color: rgb(108, 224, 108);
+    font-size: 14px;
+}
+
+.success::before {
+    content: "\e962";
+    font-family: "icomoon";
+    font-size: 14px;
+    color: rgb(108, 224, 108);
+}
+
+.safe {
+    padding-left: 165px;
+}
+
+.safe em {
+    padding: 0 12px;
+    color: #fff;
+    /* background-color: pink; */
+}
+
+.ruo {
+    background-color: #de1111;
+}
+
+.zhong {
+    background-color: #40b83f;
+}
+
+.qiang {
+    background-color: #f79100;
+}
+
+.agree {
+    padding-left: 95px;
+}
+
+.agree input {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.agree a {
+    color: blue;
+}
+
+.btn {
+    width: 200px;
+    height: 34px;
+    background-color: #c81523;
+    font-size: 14px;
+    color: #fff;
+    margin: 30px 0 0 100px;
+}
+
+.footer {
+    height: 100px;
+    margin-top: 30px;
+    /* background-color: pink; */
+}
+
+.footer .links {
+    width: 1000px;
+    height: 20px;
+    margin: 0 auto;
+    /* background-color: purple; */
+}
+
+.footer .links ul li {
+    float: left;
+    padding: 0 14px;
+}
+
+.footer .links ul li:nth-child(even) {
+    padding: 0;
+    width: 1px;
+    height: 12px;
+    margin-top: 3px;
+    background-color: #666;
+}
+
+.footer .copyright .address {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.footer .copyright .number {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}

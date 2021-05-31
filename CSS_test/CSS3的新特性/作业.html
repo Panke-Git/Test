@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        li:hover {
+            cursor: pointer;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .box {
+            float: left;
+            overflow: hidden;
+            width: 240px;
+            height: 444px;
+            background-color: #fff;
+            box-sizing: inherit;
+            margin: 10px;
+        }
+        
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?ceyp0u');
+            src: url('fonts/icomoon.eot?ceyp0u#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?ceyp0u') format('truetype'), url('fonts/icomoon.woff?ceyp0u') format('woff'), url('fonts/icomoon.svg?ceyp0u#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        
+        .box .goods {
+            width: 220px;
+            margin: 10px auto;
+        }
+        
+        .box:hover .goods .img a {
+            font-family: icomoon;
+            display: block;
+            background: rgba(0, 0, 0, .5);
+            padding: 0 5px;
+            /* background: rgba(0, 0, 0, .5) url(images/serach.png) 0 -434px no-repeat; */
+            color: #fff;
+        }
+        
+        .box:hover {
+            border: 0px solid #cfcfcf;
+            box-shadow: 0px 0px 9px 3px rgba(0, 0, 0, .2);
+        }
+        
+        .box .goods .img a:hover {
+            display: block;
+            content: ' 关注';
+            color: #e4393c;
+        }
+        
+        .box .goods .img {
+            position: relative;
+            height: 220px;
+            background-color: skyblue;
+        }
+        
+        .box .goods .img a {
+            position: absolute;
+            display: none;
+            height: 25px;
+            color: #fff;
+            width: 57px;
+            text-align: center;
+            line-height: 25px;
+            font-size: 14px;
+            right: 0;
+            bottom: 0;
+            padding-left: 5px;
+            /* background: rgba(0, 0, 0, .5); */
+        }
+        
+        .box .goods .img a span {
+            position: absolute;
+            right: 5px;
+        }
+        
+        .box .goods .nav {
+            height: 30px;
+            margin-top: 10px;
+        }
+        
+        .box .goods .nav div {
+            cursor: default;
+            float: left;
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgb(151, 151, 151);
+            background: url(images/nav.jpg);
+            background-size: 30px 30px;
+            margin-right: 5px;
+        }
+        /* .box .goods .nav:hover .box .goods .nav {
+            border: 2px solid #e4393c;
+        } */
+        
+        .box .goods .nav div:hover {
+            border: 2px solid #e4393c;
+        }
+        
+        .box .goods .price {
+            height: 30px;
+            color: #e4393c;
+            font-size: 20px;
+            margin: 5px 0;
+        }
+        
+        .box .goods .price span {
+            line-height: 30px;
+        }
+        
+        .box .goods .info {
+            height: 35px;
+            /* background-color: blueviolet; */
+        }
+        
+        .goods .info span {
+            cursor: pointer;
+            font-size: 12px;
+            color: #fff;
+            border-radius: 3px;
+            background-color: #e4393c;
+            padding: 0 2px;
+        }
+        
+        .goods .info a {
+            font-size: 10px;
+            color: #666666;
+        }
+        
+        .goods .info a:hover {
+            color: #e4393c;
+        }
+        
+        .box .goods .commit {
+            cursor: text;
+            position: relative;
+            height: 15px;
+            /* background-color: blue; */
+            margin: 10px 0;
+            font-size: 12px;
+            font-style: normal;
+        }
+        
+        .box .goods .commit::after {
+            content: '查看二手';
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #646fb0;
+            padding-right: 3px;
+            font-size: 12px;
+        }
+        
+        .box .goods .commit:hover::after {
+            cursor: pointer;
+            color: #e4393c;
+        }
+        
+        .box .goods .commit em {
+            font-style: normal;
+            font-weight: 700;
+            line-height: 15px;
+            color: #646fb0;
+            font-size: 13px;
+        }
+        
+        .box .goods .commit em:hover {
+            cursor: text;
+        }
+        
+        .box .goods .shop {
+            position: relative;
+            height: 15px;
+            /* background-color: skyblue; */
+            font-size: 12px;
+            color: #666666;
+            margin: 10px 0;
+        }
+        
+        .box .goods .shop span {
+            position: absolute;
+            top: -2px;
+            left: 0;
+            font-size: 12px;
+            /* line-height: 15px; */
+        }
+        
+        .box .goods .shop img {
+            position: absolute;
+            top: 0;
+            left: 112px;
+        }
+        
+        .box .goods .self {
+            /* height: 16px; */
+        }
+        
+        .box .goods .self {
+            /* height: 13px; */
+            /* background-color: purple; */
+        }
+        
+        .box .goods .self i {
+            line-height: 16px;
+            font-style: normal;
+            height: 13px;
+            font-size: 12px;
+            background-color: #e4393c;
+            text-align: center;
+            color: #fff;
+            padding: 0 3px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul style="width: 1040px; margin: 40px auto; overflow: hidden;">
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+        <li class="box">
+            <div class="goods">
+                <div class="img">
+                    <img src="images/phone.jpg" alt="">
+                    <a href="#"><span> 关注</span></a>
+                </div>
+                <div class="nav clearfix">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="price"><span>￥2999.00</span></div>
+                <div class="info">
+                    <span>京品手机</span>
+                    <a href="">小米10双模5G骁龙8651亿像素8K电影相机对称式立体声8GB+256GB</a>
+                </div>
+                <div class="commit">
+                    <em>50+</em>万条评价
+                </div>
+                <div class="shop">
+                    <span>小米京东自营旗舰店</span>
+                    <img src="images/jd.png" alt="">
+                </div>
+                <div class="self">
+                    <i>自营</i>
+                    <div class="tishi"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</body>
+
+</html>
